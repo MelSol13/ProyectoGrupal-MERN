@@ -48,8 +48,8 @@ const Admin = () => {
           <div className="card col-3" key={index}>
             <h2>{rec.nombre}</h2>
             <img
-                src={rec.imagen} // Reemplaza "rec.imagenUrl" con la propiedad real que contenga la URL de la imagen en tu objeto "rec"
-                alt={rec.imagenUrl} // Reemplaza "rec.nombre" con la propiedad real que contenga el nombre de la bebida
+                src={rec.imagen} 
+                alt={rec.imagenUrl}
                 className="img-fluid"
             />
             <p>{rec.contenido}</p>
@@ -60,8 +60,9 @@ const Admin = () => {
               className="btn btn-info"
               onClick={() => eliminar(rec._id)}
             >
-              Plantilla  
+              Plantilla de Diseños 
             </button>
+            
           </div>
         ))}
       </div>
