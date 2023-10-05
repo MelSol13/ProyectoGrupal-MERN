@@ -71,6 +71,7 @@ const VistaSitio = () => {
                 <Link className="btn-cambios" to={"/editarsitio/" + sitio._id}>Realizar cambios</Link>
                 <button className="btn-sitio">Crear Sitio</button>
                 <button className="btn-borrar" onClick={() => borrarSitio(sitio._id)}>Borrar</button>
+                <Link className="btn-hacerpedido" to={"/hacerpedido"}>Hacer Pedido</Link>
             </div>
         </div>
     );

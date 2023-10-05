@@ -5,6 +5,8 @@ import IniciarSesion from "./components/IniciarSesion";
 import CrearSitio from "./components/CrearSitio";
 import VistaSitio from "./components/VistaSitio";
 import ActualizarSitio from "./components/ActualizarSitio";
+import HacerPedido from "./components/HacerPedido";
+import ActualizarPedido from "./components/EditarPedido";
 
 
 const App = () =>{
@@ -17,6 +19,8 @@ const App = () =>{
         <Route path="/crearsitio" element={<CrearSitio/>}/>
         <Route path="/vistaprevia/:id" element={<VistaSitio/>}/>
         <Route path="/editarsitio/:id" element={<ActualizarSitio/>}/>
+        <Route path="/hacerpedido" element={<HacerPedido/>}/>
+        <Route path="/editarpedido/:id" element={<ActualizarPedido/>}/>
       </Routes>
     </div>
   )
