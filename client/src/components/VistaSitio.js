@@ -29,6 +29,12 @@ const VistaSitio = () => {
             .catch(err => console.log(err));
     }
 
+    const verSitio = (id) => {
+        axios.delete("http://localhost:8000/api/sitios/", { withCredentials: true })
+            .then(res => navigate("/admin"))
+            .catch(err => console.log(err));
+    }
+
 
     return (
         <div>
@@ -69,7 +75,7 @@ const VistaSitio = () => {
             </div>
             <div className='botones'>
                 <Link className="btn-cambios" to={"/editarsitio/" + sitio._id}>Realizar cambios</Link>
-                <button className="btn-sitio">Crear Sitio</button>
+                <button className="btn-sitio" onClick={() => verSitio(sitio)}>Crear Sitio</button>
                 <button className="btn-borrar" onClick={() => borrarSitio(sitio._id)}>Borrar</button>
             </div>
         </div>

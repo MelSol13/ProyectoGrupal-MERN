@@ -34,7 +34,7 @@ const CrearSitio = () => {
 
     const guardarSitio = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/api/sitios", {
+        axios.post("http://localhost:8000/api/Admin", {
             nombre,
             url,
             categoria,
