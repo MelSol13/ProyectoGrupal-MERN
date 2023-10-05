@@ -23,8 +23,12 @@ const EsquemaUsuario = new mongoose.Schema({
     password: {
         type: String,
         required: [true, "Pasword obligatorio."],
-        minlength: [8, "Pasword debe tener al menos 8 caracteres."]
+        minlength: [8, "Pasword debe tener al menos 8 caracteres."],
     }
+    /*tipo:{
+        type: Number,
+        required: ["Es requerido"],
+    }*/
 }, { timestamps: true, versionKey: false })
 
 //Se realiza cuando no queremos guardarlo en base de datos

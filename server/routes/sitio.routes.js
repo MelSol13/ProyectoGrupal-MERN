@@ -30,5 +30,5 @@ module.exports = (app) => {
     app.put("/api/pedidos/:id", PedidoController.editar_pedido);
 
     app.delete("/api/pedidos/:id", PedidoController.borrar_pedido);
- 
+
 }

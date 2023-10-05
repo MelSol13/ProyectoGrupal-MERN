@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import { ChromePicker } from 'react-color';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import"./CrearSitio.css"
 import ButtonLogout from './ButtonLogout';
 

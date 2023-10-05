@@ -13,7 +13,14 @@ const EsquemaPedido = new mongoose.Schema({
     comentarios:{
         type: String,
     },
-    
+    fecha:{
+        type:String,
+        required:["Fecha requerida"],
+    },
+    hora:{
+        type: String,
+        required:["Hora requerida"],
+    }  
 }, {timestamps:true, versionKey:false});
 
 
