@@ -48,7 +48,7 @@ const ActualizarPedido = () => {
                 fecha,
                 hora
             }, { withCredentials: true })
-                .then(res => navigate("/hacerpedido"))
+                .then(res => navigate("/hacerpedido", {state: res.data}))
                 .catch(err => setErrors(err.response.data.errors))
         };
 
@@ -70,7 +70,7 @@ const ActualizarPedido = () => {
                                 {errores.cantidad ? <span className='text-danger'>{errores.cantidad.message}</span> : null}
                             </div>
                             <div className='form-group'>
-                                <label>Imagen :</label>
+                                <label>Si su pedido es un articulo que necesita foto de referencia adjuntela aqui:</label>
                                 <input type="text" className="form-control" value={imagen} onChange={(e) => setImagen(e.target.value)} />
                             </div>
                             <div className='form-group'>

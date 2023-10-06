@@ -1,0 +1,28 @@
+.container-4{
+    width: 1800px;
+    height: 1800px;
+}
+
+.logo{
+    margin-left: 50px;
+}
+
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    background-color: lightgrey ;
+}
+
+.pedido-tit{
+    margin-left: 150px;
+    margin-right: 600px;
+}
+
+.buscar{
+    margin-left: 50px;
+    margin-right: 50px;
+}

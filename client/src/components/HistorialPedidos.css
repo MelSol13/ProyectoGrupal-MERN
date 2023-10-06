@@ -1,0 +1,16 @@
+.nav-historial{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: lightblue;
+    margin-bottom: 50px;
+}
+
+.hist-tit{
+    margin-left: 40px;
+    margin-right: 500px;
+}
+
+.log-out2{
+    margin-left: 50px;
+}

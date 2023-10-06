@@ -8,6 +8,7 @@ import Admin from "./components/Admin";
 import ActualizarSitio from "./components/ActualizarSitio";
 import HacerPedido from "./components/HacerPedido";
 import ActualizarPedido from "./components/EditarPedido";
+import HistorialPedidos from "./components/HistorialPedidos";
 
 
 const App = () =>{
@@ -23,6 +24,7 @@ const App = () =>{
         <Route path="/hacerpedido" element={<HacerPedido/>}/>
         <Route path="/editarsitio/:id" element={<ActualizarSitio/>}/>
         <Route path="/editarpedido/:id" element={<ActualizarPedido/>}/>
+        <Route path="/historialpedidos/:id" element={<HistorialPedidos/>}/>
       </Routes>
     </div>
   )

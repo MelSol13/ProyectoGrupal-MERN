@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const EsquemaPedido = new mongoose.Schema({
     producto: {
         type: String,
+        required:["Producto requerido"],
     },
     cantidad: {
     type: Number,
+    required:["Cantidad requerida"],
     },
     imagen:{
         type: String,
