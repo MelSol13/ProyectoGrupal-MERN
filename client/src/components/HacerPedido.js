@@ -139,7 +139,7 @@ const HacerPedido = () => {
                         <p>Comentarios:{state.comentarios}</p>
                         <p>Fecha de Retiro:{state.fecha}</p>
                         <p>Hora de Retiro:{state.hora}</p>
-                        <img src={state.imagen} alt="imagen referencia"></img>
+                        <img className="img" src={state.imagen} alt="imagen referencia"></img>
                     </div> : <div className='card'>
                         <h1>Carrito De Compras</h1>
                         <p>Producto:{pedido.producto}</p>
@@ -147,7 +147,7 @@ const HacerPedido = () => {
                         <p>Comentarios:{pedido.comentarios}</p>
                         <p>Fecha de Retiro:{pedido.fecha}</p>
                         <p>Hora de Retiro:{pedido.hora}</p>
-                        <img src={pedido.imagen} alt="imagen referencia"></img>
+                        <img className="img" src={pedido.imagen} alt="imagen referencia"></img>
                     </div>
             }
             <div>
