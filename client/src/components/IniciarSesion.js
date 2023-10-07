@@ -21,7 +21,8 @@ function IniciarSesion() {
                 if (res.data.error) {
                     setErrorsLogin(res.data.message);
                 } else {
-                    navigate("/crearsitio")
+                    // Pasa el nombre y apellidos del usuario al navegar a CrearSitio.js
+                    navigate("/crearsitio", { state: { userName: res.data.userName, userLastName: res.data.lastName } });
                 }
             })
             .catch(err => console.log(err));

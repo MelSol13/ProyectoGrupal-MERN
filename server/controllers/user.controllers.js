@@ -44,6 +44,15 @@ module.exports.login = (req, res) => {
 
                             const myJWT = jwt.sign(payload, secret_key);
 
+                             // Agregar el nombre y apellido del usuario a la respuesta
+                             const response = {
+                                error: false,
+                                message: "Inicio de sesión correcto.",
+                                userName: user.firstName + ' '+ user.lastName, // Nombre de usuario
+                                
+                            };
+
+
                             res
                                 .cookie("usertoken", myJWT, secret_key, {
                                     httpOnly: true

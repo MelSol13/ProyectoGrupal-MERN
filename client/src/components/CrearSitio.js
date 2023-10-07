@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import { ChromePicker } from 'react-color';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
-import"./CrearSitio.css"
+import { useNavigate, useLocation} from "react-router-dom";
+import "./CrearSitio.css"
 import ButtonLogout from './ButtonLogout';
 
 
@@ -26,11 +26,13 @@ const CrearSitio = () => {
     const [imagen1, setImagen1] = useState('');
     const [imagen2, setImagen2] = useState('');
     const [imagen3, setImagen3] = useState('');
-    const [contacto, setContacto]= useState('');
+    const [contacto, setContacto] = useState('');
 
     const [errores, setErrores] = useState({});
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const { state } = location; // Accede a las props pasadas desde IniciarSesion.js
 
     const guardarSitio = (e) => {
         e.preventDefault();
@@ -84,7 +86,16 @@ const CrearSitio = () => {
 
     return (
         <div className='container-2'>
-            <ButtonLogout />
+             <nav className="navbar" style={{display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 25px", position: "relative"  }}>
+                <div style={{  color: 'black', fontSize: '20px' }}>
+                    Inicio
+                </div>
+                <div className="user-actions" style={{ display: "flex", alignItems: "right", color: 'black', fontSize: '15px' }}>
+                    {/* Mostrar el nombre y apellidos del usuario */}
+                    <span className='username'>{state?.userName} </span>
+                    <ButtonLogout />
+                </div>
+            </nav>
             <img src={imagen} id='imagen-princ' className='animate__animated animate__jello' alt="Imagen predeterminada" />
             <div className='row'>
                 <h1 className='titulo'>Diseña a tu gusto</h1>
@@ -168,9 +179,9 @@ const CrearSitio = () => {
                             <ChromePicker className="color-informacion mb-4" color={colorInformacion} onChange={(color) => setColorInformacion(color.hex)} />
                         </div>
                         <div>
-                        <button type="submit" className="btn-vista" onClick={guardarSitio}>
-                            Vista Previa
-                        </button>
+                            <button type="submit" className="btn-vista" onClick={guardarSitio}>
+                                Vista Previa
+                            </button>
                         </div>
                     </div>
                 </form>

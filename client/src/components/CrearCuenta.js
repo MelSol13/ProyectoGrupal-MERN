@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import "./CrearCuenta.css"
 
 function CrearCuenta() {
@@ -13,6 +13,8 @@ function CrearCuenta() {
     const [errors, setErrors] = useState({});
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const { state } = location; // Accede a las props pasadas desde IniciarSesion.js
 
     const registro = e => {
         e.preventDefault();
