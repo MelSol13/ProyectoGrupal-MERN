@@ -1,29 +1,122 @@
-.container-4{
-    width: 1800px;
-    height: 1800px;
+
+.fondo3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cambia el ancho al 100% */
+    height: 100%; /* Cambia la altura al 100% */
+    background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-abstract-watercolor-background_23-2149012404.jpg?w=740&t=st=1696730676~exp=1696731276~hmac=198bcb7b27a066f11fa63ede04024518bbd65048ac086ad93cb49f7429f1017a");
+    background-size: cover;
+    opacity: 0.4;
+    z-index: -1;
+    background-color: rgba(8, 96, 131, 0.9);
 }
 
-.logo{
-    margin-left: 50px;
-}
 
-
-.nav{
+.nav {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    background-color: lightgrey ;
-}
-
-.pedido-tit{
-    margin-left: 150px;
-    margin-right: 600px;
-}
-
-.buscar{
+    background-color: rgb(155, 226, 212);
+    padding: 10px 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 5px;/* Centra horizontalmente */
+    width: auto; /* Asegura que no se desborde de la ventana */
+    height: auto;
+  }
+  
+  
+  .logo {
+    max-width: 80px; /* Establece un ancho máximo para el logo */
+    height: auto; /* Mantiene la proporción original */
+  }
+  
+  .pedido-tit {
+    font-size: 30px; /* Cambia el tamaño de fuente según tus preferencias */
+    font-weight: 'bold';
+  }
+  
+  .buscar {
+    padding: 5px 10px; /* Agrega relleno interior para el campo de búsqueda */
+    border: 1px solid #ccc; /* Agrega un borde */
+    border-radius: 5px; /* Agrega esquinas redondeadas */
+    font-size: 16px; /* Cambia el tamaño de fuente según tus preferencias */
     margin-left: 50px;
     margin-right: 50px;
+  }
+  
+  .log-out {
+    padding: 5px 10px; /* Agrega relleno interior para el botón de cierre de sesión */
+    background-color: #f00; /* Cambia el color de fondo del botón según tus preferencias */
+    color: #fff; /* Cambia el color de texto del botón según tus preferencias */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Agrega esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Cambia el tamaño de fuente según tus preferencias */
+  }
+  
+  /* Cambia el color del botón al pasar el cursor sobre él */
+  .log-out:hover {
+    background-color: #ff5555;
+  }
+  
+
+
+.pedido-tit2 {
+    margin-left: 400px;
+    margin-top: 30px;
+    font-size: 30px; /* Cambia el tamaño de fuente según tus preferencias */
+    font-weight: bold;
+
+}
+
+.form-group {
+    margin-left: 5px;
+    
+}
+.btn-vista{
+    
+    font-weight: bold;
+    font-size: 16px; 
+    margin-bottom: 15px;
+    margin-right: 65px;
+    margin-top: 30px;
+
+}
+
+.h1{
+    font-size: 15px; 
+    font-weight: bold;
+
+}
+.card{
+    margin-left: 300px;
+    font-weight: bold;
+    font-size: 15px; 
+
+}
+.btn-cambios{
+    font-weight: bold;
+    font-size: 16px; 
+    margin-left: 300px;
+    margin-top: 30px;
+
+
+}
+
+.btn-borrar{
+    font-weight: bold;
+    font-size: 16px; 
+    margin-left: 90px;
+    margin-top: 30px;
+
+}
+.btn-confirmar{
+    font-weight: bold;
+    font-size: 16px; 
+    margin-top: 30px;
+    margin-left: 90px;
+
+
 }
 

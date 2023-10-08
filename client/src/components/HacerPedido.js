@@ -79,7 +79,8 @@ const HacerPedido = () => {
 
 
     return (
-        <div className='container-4'>
+        <div className='container'>
+             <div className="fondo3">  </div>
             <nav className='nav'>
             <img src={sitio.logo} className='logo' alt="logo"></img>
             <h1 className='pedido-tit'>Dulce tentación</h1>
@@ -98,7 +99,7 @@ const HacerPedido = () => {
                             <label>Producto:</label>
                             <input type="text" name="producto" className="form-control" value={producto} onChange={e => setProducto(e.target.value)} />
                             {errores.producto ? <span className='text-danger'>{errores.producto.message}</span> : null}
-                        </div>
+                       
                         <div>
                             <label>Cantidad:</label>
                             <input type="text" name="cantidad" className="form-control" value={cantidad} onChange={e => setCantidad(e.target.value)} />
@@ -121,6 +122,7 @@ const HacerPedido = () => {
                             <label>Hora De Retiro:</label>
                             <textarea className="form-control" value={hora} onChange={(e) => setHora(e.target.value)} />
                             {errores.hora ? <span className='text-danger'>{errores.hora.message}</span> : null}
+                        </div>
                         </div>
                         <div>
                             <button type="submit" className="btn-vista" onClick={guardarPedido}>
@@ -155,6 +157,7 @@ const HacerPedido = () => {
                 <button className="btn-borrar" onClick={() => borrarPedido(pedido._id)}>Borrar</button>
                 <Link className="btn-confirmar" to={"/historialpedidos/" + pedido._id}>Confirmar</Link>
             </div>
+      
         </div>
     );
 };
