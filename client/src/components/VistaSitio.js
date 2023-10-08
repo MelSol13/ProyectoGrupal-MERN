@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import ButtonLogout from './ButtonLogout';
 import "./VistaSitio.css"
+import { UserName } from "./globals";
 import 'animate.css';
 
 const VistaSitio = () => {
@@ -38,26 +39,31 @@ const VistaSitio = () => {
 
     return (
         <div>
-            <ButtonLogout/>
-            <div className='fondo' style={{background: `${sitio.colorFondo}`}}>
-                <div className='barraSuperior' style={{background: `${sitio.colorBarra}`}}>
-                    <p className='sitioNombre'style={{fontFamily: `${sitio.fuenteSeleccionada}`}}>{sitio.nombre}</p>
+            <nav>
+                <div className="user-actions" style={{ textAlign: "right", color: 'teal', fontSize: '22px', fontWeight: 'bold', padding: "10px 25px" }}>
+                    <span className='username'>{UserName}</span>
+                </div>
+                <ButtonLogout />
+            </nav>
+            <div className='fondo' style={{ background: `${sitio.colorFondo}` }}>
+                <div className='barraSuperior' style={{ background: `${sitio.colorBarra}` }}>
+                    <p className='sitioNombre' style={{ fontFamily: `${sitio.fuenteSeleccionada}` }}>{sitio.nombre}</p>
                     <img src={sitio.logo} className='logo' alt="logo"></img>
                 </div>
                 <div className='body'>
-                    <div className='columna-izquierda' style={{background: `${sitio.colorInformacion}`}}>
+                    <div className='columna-izquierda' style={{ background: `${sitio.colorInformacion}` }}>
                         <div>
-                            <p className='eslogan'style={{fontFamily: `${sitio.fuenteSeleccionada}`}}>{sitio.eslogan}</p>
+                            <p className='eslogan' style={{ fontFamily: `${sitio.fuenteSeleccionada}` }}>{sitio.eslogan}</p>
                         </div>
-                        <p className='descripcion'style={{fontFamily: `${sitio.fuenteSeleccionada}`}}>{sitio.descripcion}</p>
+                        <p className='descripcion' style={{ fontFamily: `${sitio.fuenteSeleccionada}` }}>{sitio.descripcion}</p>
                         <ul>
-                            <li><p className='servicio1'style={{fontFamily: `${sitio.fuenteSeleccionada}`}}>{sitio.servicio1}</p></li>
-                            <li><p className='servicio2'style={{fontFamily: `${sitio.fuenteSeleccionada}`}}>{sitio.servicio2}</p></li>
-                            <li><p className='servicio3'style={{fontFamily: `${sitio.fuenteSeleccionada}`}}>{sitio.servicio3}</p></li>
+                            <li><p className='servicio1' style={{ fontFamily: `${sitio.fuenteSeleccionada}` }}>{sitio.servicio1}</p></li>
+                            <li><p className='servicio2' style={{ fontFamily: `${sitio.fuenteSeleccionada}` }}>{sitio.servicio2}</p></li>
+                            <li><p className='servicio3' style={{ fontFamily: `${sitio.fuenteSeleccionada}` }}>{sitio.servicio3}</p></li>
                         </ul>
                         <div className="contacto">
                             <img src={imagen} className='logo-whats' alt="logoWhats" />
-                            <p className='numero'style={{fontFamily: `${sitio.fuenteSeleccionada}`}}>{sitio.contacto}</p>
+                            <p className='numero' style={{ fontFamily: `${sitio.fuenteSeleccionada}` }}>{sitio.contacto}</p>
                         </div>
                     </div>
                     <div className='columna-derecha'>

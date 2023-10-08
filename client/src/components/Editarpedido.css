@@ -1,11 +1,10 @@
 .pedido-edit {
-    margin-left: 400px;
-    margin-bottom: 30px;
-    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     font-size: 35px; 
     font-weight: bold;
     font-style: italic;
-    margin-left: 400px;
+    margin-left: 200px;
 
 }
 .fondo4 {
@@ -19,4 +18,24 @@
     opacity: 0.8;
     z-index: -1;
     background-color: rgba(8, 96, 131, 0.9);
+}
+
+.nav-editar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(226, 200, 230);
+    padding: 10px 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 70px;
+    width: auto; 
+    height: auto;
+    margin-left: 200px;
+  }
+  
+  .form-group2 {
+    margin-left: 5px;
+    font-size: 20px; 
+   
+     margin-top: 35px;
 }

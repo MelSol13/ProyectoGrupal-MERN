@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams, Link, useLocation } from "react-router-dom";
+import { UserName } from "./globals";
 import "./HacerPedido.css"
+
+
 
 const HacerPedido = () => {
 
@@ -19,8 +22,6 @@ const HacerPedido = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
     const location = useLocation();
-
-
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/pedidos/" + id, { withCredentials: true })
@@ -78,7 +79,7 @@ const HacerPedido = () => {
             .then(res => navigate("/"))
             .catch(err => console.log(err));
     }
-
+    
 
     return (
         <div className='container'>
@@ -92,7 +93,7 @@ const HacerPedido = () => {
                 </svg>
                 <input type="text" className="buscar" placeholder="Buscar"></input>
                 <div className="user-actions" style={{ textAlign: "right", color: 'teal', fontSize: '22px', fontWeight: 'bold', padding: "10px 25px" }}>
-                    <span className='username'>{state?.userName}</span>
+                    <span className='username'>{UserName}</span>
                 </div>
                 <button className="log-out" onClick={cerrarSesion}>Cerrar Sesión</button>
             </nav>
@@ -100,7 +101,7 @@ const HacerPedido = () => {
                 <h1 className='pedido-tit2'>Realizar Pedido</h1>
                 <form className='form' onSubmit={guardarPedido}>
                     <div className='col-md-4'>
-                        <div className='form-group'>
+                        <div className='form-group1'>
                             <label>Producto:</label>
                             <input type="text" name="producto" className="form-control" value={producto} onChange={e => setProducto(e.target.value)} />
                             {errores.producto ? <span className='text-danger'>{errores.producto.message}</span> : null}
@@ -168,6 +169,4 @@ const HacerPedido = () => {
         </div>
     );
 };
-
-
 export default HacerPedido;

@@ -20,7 +20,7 @@
     background-color: rgb(155, 226, 212);
     padding: 10px 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-left: 50px;
+    margin-left: 70px;
     width: auto; 
     height: auto;
   }
@@ -69,7 +69,7 @@
 
 }
 
-.form-group {
+.form-group1 {
     margin-left: 5px;
     font-size: 20px; 
      
@@ -106,10 +106,33 @@
 .card{
     margin-left: 300px;
     font-size: 20px; 
-    background-color: rgb(207, 245, 237);
+    background-color: rgb(244, 207, 245);
     border: none;
+    margin-top: 25px;
 
 }
+
+.h2{
+  font-size: 30px; 
+    font-weight: bold;
+    margin-left: 200px;
+    font-family: sans-serif;
+    font-style: italic;
+    margin-top: 25px;
+    margin-bottom: 10px;
+
+
+}
+.card1{
+  margin-left: 300px;
+  font-size: 20px; 
+  background-color: rgb(207, 245, 237);
+  border: none;
+  margin-top: 25px;
+
+}
+
+
 .btn-cambios{
     
     margin-left: 400px;
