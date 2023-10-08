@@ -34,8 +34,9 @@ const HistorialPedidos = () => {
 
     return (
         <div>
+            <div className="fondo5"></div>
             <nav className='nav-historial'>
-            <h1 className='hist-tit'>Historial De Pedidos</h1>
+            <h1 className='hist-tit'>Historial de Pedidos</h1>
             <Link to="/hacerpedido" className="btn btn-success">Nuevo Pedido</Link>
             <button className="log-out2" onClick={cerrarSesion}>Cerrar Sesión</button>
             </nav>

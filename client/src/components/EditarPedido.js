@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
+import "./Editarpedido.css"
 
 
 const ActualizarPedido = () => {
@@ -55,6 +56,7 @@ const ActualizarPedido = () => {
 
         return (
             <div className='container-4'>
+                 <div className="fondo4"></div>
                 <div className='row'>
                     <h1 className='pedido-edit'>Editar Pedido</h1>
                     <form className='form' onSubmit={editarPedido}>
