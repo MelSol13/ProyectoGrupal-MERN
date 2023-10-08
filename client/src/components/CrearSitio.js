@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import { ChromePicker } from 'react-color';
 import axios from 'axios';
-import { useNavigate, useLocation} from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./CrearSitio.css"
 import ButtonLogout from './ButtonLogout';
-
 
 const CrearSitio = () => {
     const imagen = "https://media.istockphoto.com/id/1387782756/es/foto/pc-de-computadora-moderna-con-carta-de-colores-en-la-pantalla-del-monitor-taza-de-caf%C3%A9-y.jpg?s=612x612&w=0&k=20&c=M94eQcTWc4bp4Z9_4VC_PO0olEwnoqpF7NT1kna6LaY=";
@@ -36,7 +35,7 @@ const CrearSitio = () => {
 
     const guardarSitio = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/api/Admin", {
+        axios.post("http://localhost:8000/api/sitios", {
             nombre,
             url,
             categoria,
@@ -83,16 +82,11 @@ const CrearSitio = () => {
         { value: 'Skranji', label: 'Skranji' },
     ];
 
-
     return (
         <div className='container-2'>
-             <nav className="navbar" style={{display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 25px", position: "relative"  }}>
-                <div style={{  color: 'black', fontSize: '20px' }}>
-                    Inicio
-                </div>
-                <div className="user-actions" style={{ display: "flex", alignItems: "right", color: 'black', fontSize: '15px' }}>
-                    {/* Mostrar el nombre y apellidos del usuario */}
-                    <span className='username'>{state?.userName} </span>
+            <nav className="navbar" >
+                <div className="user-actions" style={{ textAlign: "right", color: 'teal', fontSize: '22px', fontWeight: 'bold', padding: "10px 25px" }}>
+                    <span className='username'>{state?.userName}</span>
                     <ButtonLogout />
                 </div>
             </nav>
@@ -189,4 +183,6 @@ const CrearSitio = () => {
         </div>
     );
 };
+
 export default CrearSitio;
+

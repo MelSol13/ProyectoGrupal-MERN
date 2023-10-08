@@ -26,7 +26,6 @@ function IniciarSesion() {
                 }
             })
             .catch(err => console.log(err));
-
     }
 
     return (

@@ -7,13 +7,10 @@ module.exports.register = (req, res) => {
     const user = new Usuario(req.body);
     user.save()
         .then(usuario => {
-            /*res.json(usuario);*/
-
             const payload = {
                 _id: user._id
             }
 
-            //Guardar al usuario en una cookie
             const myJWT = jwt.sign(payload, secret_key);
 
             res
@@ -33,7 +30,7 @@ module.exports.login = (req, res) => {
     Usuario.findOne({ email: req.body.email })
         .then(user => {
             if (user === null) {
-                res.json({ error: true, message: "El correo electronico es incorrecto." });
+                res.json({ error: true, message: "El correo electrónico es incorrecto." });
             } else {
                 bcrypt.compare(req.body.password, user.password)
                     .then(passwordValid => {
@@ -44,26 +41,25 @@ module.exports.login = (req, res) => {
 
                             const myJWT = jwt.sign(payload, secret_key);
 
-                             // Agregar el nombre y apellido del usuario a la respuesta
-                             const response = {
+                            // Agregar el nombre y apellido del usuario a la respuesta
+                            const response = {
                                 error: false,
                                 message: "Inicio de sesión correcto.",
                                 userName: user.firstName + ' '+ user.lastName, // Nombre de usuario
                                 
                             };
 
-
                             res
                                 .cookie("usertoken", myJWT, secret_key, {
                                     httpOnly: true
                                 })
-                                .json({error: false, message: "Inicio de sesión correcto."})
+                                .json(response);
 
                         } else {
-                            res.json({ error: true, message: "La contraseña es incorrecta."})
+                            res.json({ error: true, message: "La contraseña es incorrecta." })
                         }
                     })
-                    .catch(err => res.json({error: true, message:"Inicio de sesión inválido."}))
+                    .catch(err => res.json({ error: true, message: "Inicio de sesión inválido." }))
             }
         })
         .catch(err => res.json(err));
@@ -71,5 +67,5 @@ module.exports.login = (req, res) => {
 
 module.exports.logout = (req, res) => {
     res.clearCookie('usertoken');
-    res.status(200).json({message:"Salimos de sesión!"});
+    res.status(200).json({ message: "Salimos de sesión!" });
 }
