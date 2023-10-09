@@ -24,9 +24,10 @@
 .hist-tit{
     margin-left: 50px;
     margin-right: 200px;
-    font-size: 40px; 
+    font-size: 45px; 
     font-weight: 'bold';
     font-style: italic;
+    color: rgb(6, 29, 92);
 }
 
 .log-out2{
