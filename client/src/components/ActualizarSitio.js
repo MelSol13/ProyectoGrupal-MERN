@@ -4,12 +4,13 @@ import { ChromePicker } from 'react-color';
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
 import "./ActualizarSitio.css"
+import { UserName } from "./globals";
 import ButtonLogout from './ButtonLogout';
 
 
 const ActualizarSitio = () => {
 
-    
+
     const { id } = useParams();
     const [sitio, setSitio] = useState({});
     const [nombre, setNombre] = useState('');
@@ -108,6 +109,9 @@ const ActualizarSitio = () => {
 
     return (
         <div className="container-3">
+            <div className="user-actions" style={{ textAlign: "right", color: 'teal', fontSize: '22px', fontWeight: 'bold', padding: "10px 25px" }}>
+                <span className='username'>{UserName}</span>
+            </div>
             <ButtonLogout />
             <div className="row">
                 <h1 className="titulo-2">Realizar Cambios</h1>
@@ -171,7 +175,7 @@ const ActualizarSitio = () => {
                         </div>
                     </div>
                     <div className="col-md-4">
-                    <h2 className="titulo-colores">Elegir Colores:</h2>
+                        <h2 className="titulo-colores">Elegir Colores:</h2>
                         <div>
                             <label>Barra Superior:</label>
                             <ChromePicker className="color-barra2 mb-4" color={colorBarra} onChange={(color) => setColorBarra(color.hex)} />
@@ -182,7 +186,7 @@ const ActualizarSitio = () => {
                         </div>
                         <div>
                             <label>Información:</label>
-                            <ChromePicker className="color-informacion2 mb-4"  color={colorInformacion} onChange={(color) => setColorInformacion(color.hex)} />
+                            <ChromePicker className="color-informacion2 mb-4" color={colorInformacion} onChange={(color) => setColorInformacion(color.hex)} />
                         </div>
                         <div>
                             <button type="submit" className="btn-vista2" onClick={actualizarSitio}>

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link, useNavigate} from 'react-router-dom';
 import "./HistorialPedidos.css"
+import { UserName } from "./globals";
 
 const HistorialPedidos = () => {
     const [pedidos, setPedidos] = useState([]);
@@ -34,9 +35,13 @@ const HistorialPedidos = () => {
 
     return (
         <div>
+            <div className="fondo5"></div>
             <nav className='nav-historial'>
-            <h1 className='hist-tit'>Historial De Pedidos</h1>
+            <h1 className='hist-tit'>Historial de Pedidos</h1>
             <Link to="/hacerpedido" className="btn btn-success">Nuevo Pedido</Link>
+            <div className="user-actions" style={{ textAlign: "right", color: 'teal', fontSize: '22px', fontWeight: 'bold', padding: "10px 25px" }}>
+                    <span className='username'>{UserName}</span>
+                </div>
             <button className="log-out2" onClick={cerrarSesion}>Cerrar Sesión</button>
             </nav>
             <table className="table table-hover">
