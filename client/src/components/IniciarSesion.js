@@ -5,6 +5,8 @@ import { UserName} from "./globals";
 import "./IniciarSesion.css"
 
 function IniciarSesion() {
+
+    
     const [emailLogin, setEmailLogin] = useState('');
     const [passwordLogin, setPasswordLogin] = useState('');
     const [errorsLogin, setErrorsLogin] = useState('');
@@ -16,7 +18,7 @@ function IniciarSesion() {
         axios.post('http://localhost:8000/api/login', {
             email: emailLogin,
             password: passwordLogin
-        }, { withCredentials: true })
+        }, { withCredentials: false })
             .then(res => {
                 console.log(res);
                 if (res.data.error) {
@@ -24,7 +26,7 @@ function IniciarSesion() {
                 } else {
                    
                     // Pasa el nombre y apellidos del usuario al navegar a CrearSitio.js
-                    navigate("/admin", { state: { userName: res.data.userName, userLastName: res.data.lastName } });
+                    navigate("/CrearSitio", { state: { userName: res.data.userName, userLastName: res.data.lastName } });
                 }
             })
             .catch(err => console.log(err));

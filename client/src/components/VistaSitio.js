@@ -19,23 +19,26 @@ const VistaSitio = () => {
             .catch(err => {
                 if (err.response.status === 401) {
                     navigate("/iniciar-sesion");
+                    console.log("Error de autorizacion")
                 }
             });
     }, [id])
 
 
     const borrarSitio = (id) => {
-        axios.delete("http://localhost:8000/api/sitios/" + id, { withCredentials: true })
-            .then(res => navigate("/crearsitio"))
-            .catch(err => console.log(err));
-    }
+        axios.delete("http://localhost:8000/api/sitios/"+id)
+        .then(res => {
+            let nuevaLista = sitio.filter(sitio => sitio._id !== id);
+            setSitio(nuevaLista);
+        })
+        .catch(err => console.log(err));
+}
 
-    const verSitio = (id) => {
-        axios.delete("http://localhost:8000/api/sitios/", { withCredentials: true })
-            .then(res => navigate("/admin"))
-            .catch(err => console.log(err));
-    }
 
+    const verSitio = () => {
+        navigate("/admin");
+    }
+    
 
     return (
         <div>
@@ -81,7 +84,7 @@ const VistaSitio = () => {
             </div>
             <div className='botones'>
                 <Link className="btn-cambios" to={"/editarsitio/" + sitio._id}>Realizar cambios</Link>
-                <button className="btn-sitio" onClick={() => verSitio(sitio)}>Crear Sitio</button>
+                <button className="btn-sitio" onClick={() => verSitio(sitio)}>Ir a Sitios</button>
                 <button className="btn-borrar" onClick={() => borrarSitio(sitio._id)}>Borrar</button>
             </div>
         </div>

@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #41d7f1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,3 +37,8 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar navbar-expand-lg navbar-dark bg-dark{
+  color: #61dafb;
+}
+

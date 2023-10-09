@@ -9,7 +9,7 @@ import ActualizarSitio from "./components/ActualizarSitio";
 import HacerPedido from "./components/HacerPedido";
 import ActualizarPedido from "./components/EditarPedido";
 import HistorialPedidos from "./components/HistorialPedidos";
-
+import Contact from "./components/Contact";
 
 const App = () =>{
   return(
@@ -17,6 +17,7 @@ const App = () =>{
       <Routes>
         <Route path="/" exact element={<Principal/>} />
         <Route path="/admin" exact element={<Admin/>} />
+        <Route path="/contact" exact element={<Contact/>} />
         <Route path="/crearcuenta" element={<CrearCuenta/>}/>
         <Route path="/iniciar-sesion" element={<IniciarSesion/>}/>
         <Route path="/crearsitio" element={<CrearSitio/>}/>
