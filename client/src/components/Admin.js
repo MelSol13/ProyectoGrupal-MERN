@@ -36,7 +36,7 @@ const Admin = () => {
       <header>
         <div className="text-center"> 
         <h1 style={{ color: 'goldenrod', ...titleLineStyle }}>Diseños disponibles</h1>
-          <Link to="/nuevoSitio" className="btn btn-success">
+          <Link to="/crearSitio" className="btn btn-success">
             Nueva Plantilla +
           </Link>
         </div>
@@ -53,7 +53,7 @@ const Admin = () => {
                 className="img-fluid"
             />
             <p>{rec.contenido}</p>
-            <Link className="btn btn-success" to={`/editar/${rec._id}`}>
+            <Link className="btn btn-success" to={`/ActualizarSitio/${rec._id}`}>
               Editar
             </Link>
             <button

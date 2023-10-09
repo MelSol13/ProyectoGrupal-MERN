@@ -7,6 +7,8 @@ const {authenticate} = require("../config/jwt.config");
 module.exports = (app) => {
     app.get("/api/sitios/", authenticate, SitioController.ver_todos);
 
+    app.get("/api/admin/", authenticate, SitioController.ver_todos);
+
     app.get("/api/sitios/:id", authenticate, SitioController.ver_sitio);
 
     app.post("/api/sitios/", authenticate, SitioController.crear_sitio);
