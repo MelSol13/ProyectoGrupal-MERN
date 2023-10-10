@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { UserName} from "./globals";
 import "./IniciarSesion.css"
 
 function IniciarSesion() {
@@ -24,9 +23,7 @@ function IniciarSesion() {
                 if (res.data.error) {
                     setErrorsLogin(res.data.message);
                 } else {
-                   
-                    // Pasa el nombre y apellidos del usuario al navegar a CrearSitio.js
-                    navigate("/CrearSitio", { state: { userName: res.data.userName, userLastName: res.data.lastName } });
+                    navigate("/crearsitio");
                 }
             })
             .catch(err => console.log(err));

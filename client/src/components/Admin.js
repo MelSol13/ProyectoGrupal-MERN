@@ -13,7 +13,7 @@ const Admin = () => {
   const [sitios, setSitios] = useState([]);
 
   useEffect( ()=>{
-      axios.get("http://localhost:8000/api/sitios")
+      axios.get("http://localhost:8000/api/sitios", { withCredentials: true })
           .then(res => setSitios(res.data))
           .catch(err => console.log(err));
   }, [])
@@ -21,7 +21,7 @@ const Admin = () => {
 
   const eliminar = (id) => {
     axios
-      .delete("http://localhost:8000/api/sitios/" + id)
+      .delete("http://localhost:8000/api/sitios/" + id, { withCredentials: true })
       .then((res) => {
         let nuevaLista = sitios.filter((sitio) => sitio._id !== id);
         setSitios(nuevaLista);
@@ -113,7 +113,7 @@ const Admin = () => {
                                 </td>
                               
                                 <td>
-                                    <Link className='btn btn-warning' to={`/editar/${sitio._id}`}>Editar</Link>
+                                    <Link className='btn btn-warning' to={`/editarsitio/${sitio._id}`}>Editar</Link>
                                     <button className='btn btn-danger' onClick={()=>eliminar(sitio._id) }>Eliminar</button>
                                 </td>
                             </tr>

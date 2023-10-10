@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import { ChromePicker } from 'react-color';
 import axios from 'axios';
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./CrearSitio.css"
 import ButtonLogout from './ButtonLogout';
 
@@ -30,8 +30,6 @@ const CrearSitio = () => {
     const [errores, setErrores] = useState({});
 
     const navigate = useNavigate();
-    const location = useLocation();
-    const { state } = location; // Accede a las props pasadas desde IniciarSesion.js
 
     const guardarSitio = (e) => {
         e.preventDefault();
@@ -58,8 +56,10 @@ const CrearSitio = () => {
             .catch(err => {
                 if (err.response.status === 401) {
                     navigate("/iniciar-sesion")
+                    console.log("error aqui");
                 } else {
                     setErrores(err.response.data.errors)
+                    //console.log("error aqui");
                 }
             });
     }
@@ -85,14 +85,13 @@ const CrearSitio = () => {
     return (
         <div className='container-2'>
             <nav className="navbar" >
-                <div className="user-actions" style={{ textAlign: "right", color: 'teal', fontSize: '22px', fontWeight: 'bold', padding: "10px 25px" }}>
-                    <span className='username'>{state?.userName}</span>
-                    <ButtonLogout />
-                </div>
+            <ButtonLogout />
             </nav>
             <img src={imagen} id='imagen-princ' className='animate__animated animate__jello' alt="Imagen predeterminada" />
             <div className='row'>
                 <h1 className='titulo'>Diseña a tu gusto</h1>
+            </div>
+            <div className='row'>
                 <form className='form' onSubmit={guardarSitio}>
                     <div className='col-md-4'>
                         <div className='form-group'>
@@ -173,7 +172,7 @@ const CrearSitio = () => {
                             <ChromePicker className="color-informacion mb-4" color={colorInformacion} onChange={(color) => setColorInformacion(color.hex)} />
                         </div>
                         <div>
-                            <button type="submit" className="btn-vista1" onClick={guardarSitio}><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                            <button type="submit" className="btn-vista1" onClick={guardarSitio}><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                             </svg>

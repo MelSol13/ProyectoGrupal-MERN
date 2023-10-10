@@ -4,7 +4,6 @@ import { ChromePicker } from 'react-color';
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom";
 import "./ActualizarSitio.css"
-import { UserName } from "./globals";
 import ButtonLogout from './ButtonLogout';
 
 
@@ -109,9 +108,6 @@ const ActualizarSitio = () => {
 
     return (
         <div className="container-3">
-            <div className="user-actions" style={{ textAlign: "right", color: 'teal', fontSize: '22px', fontWeight: 'bold', padding: "10px 25px" }}>
-                <span className='username'>{UserName}</span>
-            </div>
             <ButtonLogout />
             <div className="row">
                 <h1 className="titulo-2">Realizar Cambios</h1>
